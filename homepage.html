@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My College Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to My College</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#courses">Courses</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are an innovative institution dedicated to education and growth.</p>
+    </section>
+
+    <section id="courses">
+        <h2>Courses Offered</h2>
+        <ul>
+            <li>Computer Science</li>
+            <li>Electrical Engineering</li>
+            <li>Business Administration</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@mycollege.com</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 My College. All rights reserved.</p>
+    </footer>
+</body>
+</html>
