@@ -66,7 +66,7 @@ def show_syllabus(course, year):
             '1st_year': ['Calculus', 'Algebra and Trigonometry'],
             '2nd_year': ['Differential Equations', 'Vector Calculus'],
             '3rd_year': ['Real Analysis', 'Complex Analysis']
-        }
+        },
         'Bcom':{
             '1st_year': ['Calcu', 'Algebr and Trigoetry'],
             '2nd_year': ['Differtial Equatns', 'Veor Calculus'],
