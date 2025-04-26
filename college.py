@@ -8,6 +8,11 @@ app = Flask(__name__)
 def home():
     return render_template('homepage.html')
 
+# About Page
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 # Courses
 @app.route('/courses')
 def courses():
