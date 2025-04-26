@@ -67,6 +67,11 @@ def show_syllabus(course, year):
             '2nd_year': ['Differential Equations', 'Vector Calculus'],
             '3rd_year': ['Real Analysis', 'Complex Analysis']
         }
+        'Bcom':{
+            '1st_year': ['Calcu', 'Algebr and Trigoetry'],
+            '2nd_year': ['Differtial Equatns', 'Veor Calculus'],
+            '3rd_year': ['Real Anysis', 'Comex Analysis']
+        }
     }
 
     subjects = syllabus.get(course, {}).get(year, [])
