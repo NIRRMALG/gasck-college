@@ -61,11 +61,11 @@ def course_pdfs(course):
 @app.route('/faculty')
 def faculty():
     faculty_list = [
-        {'name': 'Dr. A. Kumar', 'slug': 'a_kumar', 'department': 'Computer Science'},
+        {'name': 'Dr. A. Kumar', 'slug': 'a_kumar', 'department': 'English'},
         {'name': 'Prof. B. Lakshmi', 'slug': 'b_lakshmi', 'department': 'Mathematics'},
-        {'name': 'Dr. R. Gurumoorthy', 'slug': 'c_guru', 'department': 'English'},
+        {'name': 'Dr. R. Gurumoorthy', 'slug': 'c_guru', 'department': 'Computer Science'},
         {'name': 'Dr. F. Nisha Meena', 'slug': 'f_meena', 'department': 'Commerce'},
-        {'name': 'Prof. D. Rajesh', 'slug': 'd_rajesh', 'department': 'Physics'}
+        {'name': 'Prof. D. Rajesh', 'slug': 'd_rajesh', 'department': 'Tamil'}
     ]
     return render_template('faculty.html', faculty_list=faculty_list)
 
@@ -75,8 +75,8 @@ def faculty_profile(slug):
     faculty_data = {
         'a_kumar': {
             'name': 'Dr. A. Kumar',
-            'department': 'Computer Science',
-            'qualification': 'Ph.D in Computer Science',
+            'department': 'English',
+            'qualification': 'Ph.D in English Literature',
             'cabin': 'Room 101',
             'photo': url_for('static', filename='a_kumar.png')
         },
@@ -89,7 +89,7 @@ def faculty_profile(slug):
         },
         'c_guru': {
             'name': 'Dr. R. Gurumoorthy',
-            'department': 'English',
+            'department': 'Computer Science',
             'qualification': 'Ph.D, M.Phil, MBA, MCA',
             'cabin': 'Room 103',
             'photo': url_for('static', filename='c_guru.png')
@@ -103,8 +103,8 @@ def faculty_profile(slug):
         },
         'd_rajesh': {
             'name': 'Prof. D. Rajesh',
-            'department': 'Physics',
-            'qualification': 'M.Sc Physics, NET',
+            'department': 'Tamil',
+            'qualification': 'Phd in Tamil Literature',
             'cabin': 'Room 105',
             'photo': url_for('static', filename='default_faculty.png')
         }
