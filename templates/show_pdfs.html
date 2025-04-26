@@ -1,1 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ course }} PDFs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .pdf-links {
+            margin-top: 30px;
+        }
+        .pdf-link {
+            text-decoration: none;
+            background-color: #2196F3;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            display: inline-block;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+        .pdf-link:hover {
+            background-color: #0b7dda;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>{{ course }} Documents</h1>
+    </header>
+
+    <section class="pdf-links">
+        <h2>Download the PDFs:</h2>
+        <a class="pdf-link" href="{{ syllabus_url }}" target="_blank">Syllabus PDF</a>
+        <a class="pdf-link" href="{{ learning_url }}" target="_blank">Learning Outcomes PDF</a>
+    </section>
+
+    <footer>
+        <p>&copy; GASCK – Where Minds Soar, Futures Evolve.</p>
+    </footer>
+</body>
+</html>
 
