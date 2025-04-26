@@ -1,1 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ course }} - {{ year }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>{{ course }} - {{ year }}</h1>
+    </header>
+
+    <section>
+        <h2>Syllabus Subjects:</h2>
+        <ul>
+            {% for subject in subjects %}
+                <li>{{ subject }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; GASCK – Where Minds Soar, Futures Evolve.</p>
+    </footer>
+</body>
+</html>
 
