@@ -6,37 +6,43 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <style>
         .pdf-links {
-            margin-top: 30px;
+            text-align: center;
+            margin-top: 50px;
         }
-        .pdf-link {
-            text-decoration: none;
-            background-color: #2196F3;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 8px;
+        .pdf-links a {
             display: inline-block;
-            margin: 10px;
+            margin: 15px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
             transition: background-color 0.3s;
         }
-        .pdf-link:hover {
-            background-color: #0b7dda;
+        .pdf-links a:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>{{ course }} Documents</h1>
-    </header>
 
-    <section class="pdf-links">
-        <h2>Download the PDFs:</h2>
-        <a class="pdf-link" href="{{ syllabus_url }}" target="_blank">Syllabus PDF</a>
-        <a class="pdf-link" href="{{ learning_url }}" target="_blank">Learning Outcomes PDF</a>
-    </section>
+<header>
+    <h1>{{ course }} - Syllabus & Outcomes</h1>
+    <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('courses') }}">Courses</a>
+        <a href="{{ url_for('faculty') }}">Faculty</a>
+    </nav>
+</header>
 
-    <footer>
-        <p>&copy; GASCK – Where Minds Soar, Futures Evolve.</p>
-    </footer>
+<section class="pdf-links">
+    <a href="{{ course_info.syllabus_pdf }}" target="_blank">View Syllabus</a>
+    <a href="{{ course_info.outcomes_pdf }}" target="_blank">View Learning Outcomes</a>
+</section>
+
+<footer>
+    <p>&copy; GASCK – Where Minds Soar, Futures Evolve.</p>
+</footer>
+
 </body>
 </html>
-
