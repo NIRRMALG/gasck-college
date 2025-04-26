@@ -24,8 +24,7 @@ def faculty():
     faculty_list = [
         {'name': 'Dr. A. Kumar', 'slug': 'a_kumar', 'department': 'Computer Science'},
         {'name': 'Prof. B. Lakshmi', 'slug': 'b_lakshmi', 'department': 'Mathematics'},
-        {'name': 'Dr. R.Gurumoorthy', 'slug': 'c_guru', 'department': 'English'},
-        {'name': 'Dr. D. Meena', 'slug': 'd_meena', 'department': 'Tamil'},
+        {'name': 'Dr. R. Gurumoorthy', 'slug': 'c_guru', 'department': 'English'},
     ]
     return render_template('faculty.html', faculty_list=faculty_list)
 
@@ -38,28 +37,21 @@ def faculty_profile(slug):
             'department': 'Computer Science',
             'qualification': 'Ph.D in Computer Science',
             'cabin': 'Room 101',
-            'photo': 'faculty_photos/a_kumar.jpg'
+            'photo': url_for('static', filename='a_kumar.png')
         },
         'b_lakshmi': {
             'name': 'Prof. B. Lakshmi',
             'department': 'Mathematics',
             'qualification': 'M.Sc., M.Phil',
             'cabin': 'Room 102',
-            'photo': 'faculty_photos/b_lakshmi.jpg'
+            'photo': url_for('static', filename='b_lakshmi.png')
         },
         'c_guru': {
-            'name': 'Dr. R.Gurumoorthy',
+            'name': 'Dr. R. Gurumoorthy',
             'department': 'English',
-            'qualification': 'Ph.D in Computer Science,Mphil,MBA,MCA',
+            'qualification': 'Ph.D, M.Phil, MBA, MCA',
             'cabin': 'Room 103',
-            'photo': 'faculty_photos/c_guru.jpg'
-        },
-        'd_meena': {
-            'name': 'Dr. D. Meena',
-            'department': 'Tamil',
-            'qualification': 'Ph.D in Tamil',
-            'cabin': 'Room 104',
-            'photo': 'faculty_photos/d_meena.jpg'
+            'photo': url_for('static', filename='c_guru.png')
         }
     }
 
@@ -74,39 +66,39 @@ def faculty_profile(slug):
 def contact():
     return render_template('contact.html')
 
-# Academics Main Page
+# Academics Page
 @app.route('/academics')
 def academics():
     return render_template('academics.html')
 
-# Step 1: Select a course
+# Select a Course for Syllabus
 @app.route('/syllabus/select')
 def select_course():
     return render_template('select_course.html')
 
-# Step 2: After selecting course - show PDF links
+# Show Syllabus PDFs
 @app.route('/syllabus/<course>')
 def show_course_pdfs(course):
     pdf_links = {
         'BSc_Computer_Science': {
-            'syllabus_pdf': url_for('static', filename='pdfs/BSc_CS_Syllabus.pdf'),
-            'outcomes_pdf': url_for('static', filename='pdfs/BSc_CS_Outcomes.pdf')
+            'syllabus_pdf': url_for('static', filename='BSc_COMPUTERSCIENCE_syllabus.pdf'),
+            'outcomes_pdf': url_for('static', filename='B.Sc_ComputerScience_learningoutcomes.pdf')
         },
         'BA_Tamil': {
-            'syllabus_pdf': url_for('static', filename='pdfs/BA_Tamil_Syllabus.pdf'),
-            'outcomes_pdf': url_for('static', filename='pdfs/BA_Tamil_Outcomes.pdf')
+            'syllabus_pdf': url_for('static', filename='BA_TAMIL_syllabus.pdf'),
+            'outcomes_pdf': url_for('static', filename='BA_TAMIL_learningoutcomes.pdf')
         },
         'BA_English': {
-            'syllabus_pdf': url_for('static', filename='pdfs/BA_English_Syllabus.pdf'),
-            'outcomes_pdf': url_for('static', filename='pdfs/BA_English_Outcomes.pdf')
+            'syllabus_pdf': url_for('static', filename='BA_ENGLISH_syllabus.pdf'),
+            'outcomes_pdf': url_for('static', filename='BA_ENGLISH_learningoutcomes.pdf')
         },
         'BSc_Mathematics': {
-            'syllabus_pdf': url_for('static', filename='pdfs/BSc_Math_Syllabus.pdf'),
-            'outcomes_pdf': url_for('static', filename='pdfs/BSc_Math_Outcomes.pdf')
+            'syllabus_pdf': url_for('static', filename='BSc_MATHEMATICS_syllabus.pdf'),
+            'outcomes_pdf': url_for('static', filename='B.Sc_Mathematics_learningoutcomes.pdf')
         },
         'Bcom': {
-            'syllabus_pdf': url_for('static', filename='pdfs/BCom_Syllabus.pdf'),
-            'outcomes_pdf': url_for('static', filename='pdfs/BCom_Outcomes.pdf')
+            'syllabus_pdf': url_for('static', filename='BCOM_syllabus.pdf'),
+            'outcomes_pdf': url_for('static', filename='BCOM_learningoutcomes.pdf')
         }
     }
 
@@ -116,6 +108,7 @@ def show_course_pdfs(course):
 
     return render_template('course_pdfs.html', course=course.replace('_', ' '), course_info=course_info)
 
+# Run the App
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
