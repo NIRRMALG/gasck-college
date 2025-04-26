@@ -48,9 +48,9 @@ def select_year(course):
 def show_syllabus(course, year):
     syllabus = {
         'BSc_Computer_Science': {
-            '1st_year': ['Programming in C', 'Digital Electronics', 'Mathematics I'],
-            '2nd_year': ['Data Structures', 'Operating Systems', 'Mathematics II'],
-            '3rd_year': ['DBMS', 'Web Technology', 'Project Work']
+            '1st_year': ['Introduction to Programming', 'Basic Mathematics', 'Fundamentals of Computer Systems','Introduction to Web Development'],
+            '2nd_year': ['Advanced Programming', 'Operating Systems', 'Data Structures and Algorithms','Database Management Systems','Computer Networks'],
+            '3rd_year': ['Software Engineering', 'System Software','Python Programming','Mobile Application Development','Electives', 'Project Work']
         },
         'BA_Tamil': {
             '1st_year': ['Tamil Literature I', 'History of Tamil Language'],
@@ -63,7 +63,7 @@ def show_syllabus(course, year):
             '3rd_year': ['Shakespeare Studies', 'Contemporary Literature']
         },
         'BSc_Mathematics': {
-            '1st_year': ['Calculus', 'Algebra and Trigonometry'],
+            '1st_year': ['Differential Calculus and Trigonometry', 'Algebra and Trigonometry'],
             '2nd_year': ['Differential Equations', 'Vector Calculus'],
             '3rd_year': ['Real Analysis', 'Complex Analysis']
         },
