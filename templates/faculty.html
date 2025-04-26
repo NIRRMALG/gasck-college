@@ -1,1 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faculty at GASCK</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Our Faculty</h1>
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('courses') }}">Courses</a>
+            <a href="{{ url_for('academics') }}">Academics</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+    </header>
+
+    <section>
+        <ul>
+            <li>Dr. Ramesh - Head of Computer Science</li>
+            <li>Prof. Priya - Tamil Department</li>
+            <li>Prof. David - English Department</li>
+            <li>Dr. Anitha - Mathematics Department</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; GASCK</p>
+    </footer>
+</body>
+</html>
 
