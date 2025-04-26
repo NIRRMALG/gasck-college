@@ -30,24 +30,24 @@ def courses():
 def course_pdfs(course):
     pdf_links = {
         'BSc_Computer_Science': {
-            'syllabus_pdf': url_for('static', filename='show_pdf/BSc_COMPUTERSCIENCE_syllabus.pdf'),
-            'outcomes_pdf': url_for('static', filename='show_pdf/BSc_COMPUTERSCIENCE_learningoutcomes.pdf')
+            'syllabus_pdf': url_for('static', filename='show_pdfs/BSc_COMPUTERSCIENCE_syllabus.pdf'),
+            'outcomes_pdf': url_for('static', filename='show_pdfs/BSc_COMPUTERSCIENCE_learningoutcomes.pdf')
         },
         'BSc_Mathematics': {
-            'syllabus_pdf': url_for('static', filename='show_pdf/BSc_MATHEMATICS_syllabus.pdf'),
-            'outcomes_pdf': url_for('static', filename='show_pdf/BSc_MATHEMATICS_learningoutcomes.pdf')
+            'syllabus_pdf': url_for('static', filename='show_pdfs/BSc_MATHEMATICS_syllabus.pdf'),
+            'outcomes_pdf': url_for('static', filename='show_pdfs/BSc_MATHEMATICS_learningoutcomes.pdf')
         },
         'BA_English': {
-            'syllabus_pdf': url_for('static', filename='show_pdf/BA_ENGLISH_syllabus.pdf'),
-            'outcomes_pdf': url_for('static', filename='show_pdf/BA_ENGLISH_learningoutcomes.pdf')
+            'syllabus_pdf': url_for('static', filename='show_pdfs/BA_ENGLISH_syllabus.pdf'),
+            'outcomes_pdf': url_for('static', filename='show_pdfs/BA_ENGLISH_learningoutcomes.pdf')
         },
         'BA_Tamil': {
-            'syllabus_pdf': url_for('static', filename='show_pdf/BA_TAMIL_syllabus.pdf'),
-            'outcomes_pdf': url_for('static', filename='show_pdf/BA_TAMIL_learningoutcomes.pdf')
+            'syllabus_pdf': url_for('static', filename='show_pdfs/BA_TAMIL_syllabus.pdf'),
+            'outcomes_pdf': url_for('static', filename='show_pdfs/BA_TAMIL_learningoutcomes.pdf')
         },
         'BCom': {
-            'syllabus_pdf': url_for('static', filename='show_pdf/BCOM_syllabus.pdf'),
-            'outcomes_pdf': url_for('static', filename='show_pdf/BCOM_learningoutcomes.pdf')
+            'syllabus_pdf': url_for('static', filename='show_pdfs/BCOM_syllabus.pdf'),
+            'outcomes_pdf': url_for('static', filename='show_pdfs/BCOM_learningoutcomes.pdf')
         }
     }
 
