@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, abort
 import os
 
 app = Flask(__name__)
@@ -13,12 +13,51 @@ def home():
 def about():
     return render_template('about.html')
 
-# Courses Page
+# Courses Page: Show All Courses
 @app.route('/courses')
 def courses():
-    return render_template('courses.html')
+    courses = [
+        'BSc_Computer_Science',
+        'BSc_Mathematics',
+        'BA_English',
+        'BA_Tamil',
+        'BCom'
+    ]
+    return render_template('courses.html', courses=courses)
 
-# Faculty List Page
+# Course PDFs Page (syllabus and learning outcomes)
+@app.route('/courses/<course>')
+def course_pdfs(course):
+    pdf_links = {
+        'BSc_Computer_Science': {
+            'syllabus_pdf': url_for('static', filename='BSc_COMPUTERSCIENCE_syllabus.pdf'),
+            'outcomes_pdf': url_for('static', filename='B.Sc_ComputerScience_learningoutcomes.pdf')
+        },
+        'BSc_Mathematics': {
+            'syllabus_pdf': url_for('static', filename='BSc_MATHEMATICS_syllabus.pdf'),
+            'outcomes_pdf': url_for('static', filename='B.Sc_Mathematics_learningoutcomes.pdf')
+        },
+        'BA_English': {
+            'syllabus_pdf': url_for('static', filename='BA_ENGLISH_syllabus.pdf'),
+            'outcomes_pdf': url_for('static', filename='BA_ENGLISH_learningoutcomes.pdf')
+        },
+        'BA_Tamil': {
+            'syllabus_pdf': url_for('static', filename='BA_TAMIL_syllabus.pdf'),
+            'outcomes_pdf': url_for('static', filename='BA_TAMIL_learningoutcomes.pdf')
+        },
+        'BCom': {
+            'syllabus_pdf': url_for('static', filename='BCOM_syllabus.pdf'),
+            'outcomes_pdf': url_for('static', filename='BCOM_learningoutcomes.pdf')
+        }
+    }
+
+    course_info = pdf_links.get(course)
+    if not course_info:
+        return "<h1>Course Not Found</h1>", 404
+
+    return render_template('course_pdfs.html', course=course.replace('_', ' '), course_info=course_info)
+
+# Faculty List Page: Show All Faculty Names
 @app.route('/faculty')
 def faculty():
     faculty_list = [
@@ -26,11 +65,11 @@ def faculty():
         {'name': 'Prof. B. Lakshmi', 'slug': 'b_lakshmi', 'department': 'Mathematics'},
         {'name': 'Dr. R. Gurumoorthy', 'slug': 'c_guru', 'department': 'English'},
         {'name': 'Dr. F. Nisha Meena', 'slug': 'f_meena', 'department': 'Commerce'},
-        {'name': 'Prof. D. Rajesh', 'slug': 'd_rajesh', 'department': 'Physics'},
+        {'name': 'Prof. D. Rajesh', 'slug': 'd_rajesh', 'department': 'Physics'}
     ]
     return render_template('faculty.html', faculty_list=faculty_list)
 
-# Faculty Profile Page
+# Faculty Details Page
 @app.route('/faculty/<slug>')
 def faculty_profile(slug):
     faculty_data = {
@@ -60,15 +99,15 @@ def faculty_profile(slug):
             'department': 'Commerce',
             'qualification': 'Ph.D in Commerce',
             'cabin': 'Room 104',
-            'photo': url_for('static', filename='d_meena.png')  # Corrected here
+            'photo': url_for('static', filename='f_meena.png')  # corrected typo here
         },
         'd_rajesh': {
             'name': 'Prof. D. Rajesh',
             'department': 'Physics',
             'qualification': 'M.Sc Physics, NET',
             'cabin': 'Room 105',
-            'photo': url_for('static', filename='default_faculty.png')  # Using default photo
-        },
+            'photo': url_for('static', filename='default_faculty.png')
+        }
     }
 
     faculty = faculty_data.get(slug)
@@ -86,43 +125,6 @@ def contact():
 @app.route('/academics')
 def academics():
     return render_template('academics.html')
-
-# Select a Course for Syllabus
-@app.route('/syllabus/select')
-def select_course():
-    return render_template('select_course.html')
-
-# Show Syllabus PDFs
-@app.route('/syllabus/<course>')
-def show_course_pdfs(course):
-    pdf_links = {
-        'BSc_Computer_Science': {
-            'syllabus_pdf': url_for('static', filename='BSc_COMPUTERSCIENCE_syllabus.pdf'),
-            'outcomes_pdf': url_for('static', filename='B.Sc_ComputerScience_learningoutcomes.pdf')
-        },
-        'BA_Tamil': {
-            'syllabus_pdf': url_for('static', filename='BA_TAMIL_syllabus.pdf'),
-            'outcomes_pdf': url_for('static', filename='BA_TAMIL_learningoutcomes.pdf')
-        },
-        'BA_English': {
-            'syllabus_pdf': url_for('static', filename='BA_ENGLISH_syllabus.pdf'),
-            'outcomes_pdf': url_for('static', filename='BA_ENGLISH_learningoutcomes.pdf')
-        },
-        'BSc_Mathematics': {
-            'syllabus_pdf': url_for('static', filename='BSc_MATHEMATICS_syllabus.pdf'),
-            'outcomes_pdf': url_for('static', filename='B.Sc_Mathematics_learningoutcomes.pdf')
-        },
-        'Bcom': {
-            'syllabus_pdf': url_for('static', filename='BCOM_syllabus.pdf'),
-            'outcomes_pdf': url_for('static', filename='BCOM_learningoutcomes.pdf')
-        }
-    }
-
-    course_info = pdf_links.get(course)
-    if not course_info:
-        return "<h1>Course Not Found</h1>", 404
-
-    return render_template('course_pdfs.html', course=course.replace('_', ' '), course_info=course_info)
 
 # Run the App
 if __name__ == '__main__':
