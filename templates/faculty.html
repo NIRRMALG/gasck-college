@@ -1,34 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Faculty at GASCK</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-</head>
-<body>
-    <header>
-        <h1>Our Faculty</h1>
-        <nav>
-            <a href="{{ url_for('home') }}">Home</a>
-            <a href="{{ url_for('about') }}">About</a>
-            <a href="{{ url_for('courses') }}">Courses</a>
-            <a href="{{ url_for('academics') }}">Academics</a>
-            <a href="{{ url_for('contact') }}">Contact</a>
-        </nav>
-    </header>
-
-    <section>
-        <ul>
-            <li>Dr. Ramesh - Head of Computer Science</li>
-            <li>Prof. Priya - Tamil Department</li>
-            <li>Prof. David - English Department</li>
-            <li>Dr. Anitha - Mathematics Department</li>
-        </ul>
-    </section>
-
-    <footer>
-        <p>&copy; GASCK – Where Minds Soar, Futures Evolve.</p>
-    </footer>
-</body>
-</html>
-
+<section class="faculty-list">
+    <a href="{{ url_for('faculty_profile', faculty_name='A_Kumar') }}" class="faculty-card">
+        <h2>Dr. A. Kumar</h2>
+        <p>Professor of Computer Science</p>
+    </a>
+    <a href="{{ url_for('faculty_profile', faculty_name='B_Lakshmi') }}" class="faculty-card">
+        <h2>Dr. B. Lakshmi</h2>
+        <p>Head of Tamil Department</p>
+    </a>
+    <a href="{{ url_for('faculty_profile', faculty_name='C_David') }}" class="faculty-card">
+        <h2>Prof. C. David</h2>
+        <p>Senior Lecturer, English</p>
+    </a>
+    <a href="{{ url_for('faculty_profile', faculty_name='D_Priya') }}" class="faculty-card">
+        <h2>Dr. D. Priya</h2>
+        <p>Professor of Mathematics</p>
+    </a>
+    <a href="{{ url_for('faculty_profile', faculty_name='E_Varun') }}" class="faculty-card">
+        <h2>Dr. E. Varun</h2>
+        <p>Head of Commerce Department</p>
+    </a>
+</section>
