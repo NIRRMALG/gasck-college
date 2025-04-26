@@ -99,7 +99,7 @@ def faculty_profile(slug):
             'department': 'Commerce',
             'qualification': 'Ph.D in Commerce',
             'cabin': 'Room 104',
-            'photo': url_for('static', filename='f_meena.png')  # corrected typo here
+            'photo': url_for('static', filename='d_meena.png')  # corrected typo here
         },
         'd_rajesh': {
             'name': 'Prof. D. Rajesh',
