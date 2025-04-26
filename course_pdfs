@@ -1,0 +1,24 @@
+<!-- templates/course_pdfs.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ course }} PDFs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>{{ course }} PDFs</h1>
+
+    {% if course_info %}
+        <ul>
+            {% for pdf in course_info['pdfs'] %}
+                <li><a href="{{ url_for('static', filename=pdf['path']) }}" target="_blank">{{ pdf['title'] }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No PDFs available for this course.</p>
+    {% endif %}
+
+    <a href="{{ url_for('courses') }}">Back to Courses</a>
+</body>
+</html>
