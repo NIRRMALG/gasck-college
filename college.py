@@ -25,6 +25,8 @@ def faculty():
         {'name': 'Dr. A. Kumar', 'slug': 'a_kumar', 'department': 'Computer Science'},
         {'name': 'Prof. B. Lakshmi', 'slug': 'b_lakshmi', 'department': 'Mathematics'},
         {'name': 'Dr. R. Gurumoorthy', 'slug': 'c_guru', 'department': 'English'},
+        {'name': 'Dr. F. Nisha Meena', 'slug': 'f_meena', 'department': 'Commerce'},
+        {'name': 'Prof. D. Rajesh', 'slug': 'd_rajesh', 'department': 'Physics'},
     ]
     return render_template('faculty.html', faculty_list=faculty_list)
 
@@ -52,7 +54,21 @@ def faculty_profile(slug):
             'qualification': 'Ph.D, M.Phil, MBA, MCA',
             'cabin': 'Room 103',
             'photo': url_for('static', filename='c_guru.png')
-        }
+        },
+        'f_meena': {
+            'name': 'Dr. F. Nisha Meena',
+            'department': 'Commerce',
+            'qualification': 'Ph.D in Commerce',
+            'cabin': 'Room 104',
+            'photo': url_for('static', filename='d_meena.png')  # Corrected here
+        },
+        'd_rajesh': {
+            'name': 'Prof. D. Rajesh',
+            'department': 'Physics',
+            'qualification': 'M.Sc Physics, NET',
+            'cabin': 'Room 105',
+            'photo': url_for('static', filename='default_faculty.png')  # Using default photo
+        },
     }
 
     faculty = faculty_data.get(slug)
