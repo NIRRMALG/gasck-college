@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, abort
+from flask import Flask, render_template, url_for
 import os
 
 app = Flask(__name__)
@@ -30,24 +30,24 @@ def courses():
 def course_pdfs(course):
     pdf_links = {
         'BSc_Computer_Science': {
-            'syllabus_pdf': url_for('static', filename='BSc_COMPUTERSCIENCE_syllabus.pdf'),
-            'outcomes_pdf': url_for('static', filename='B.Sc_ComputerScience_learningoutcomes.pdf')
+            'syllabus_pdf': url_for('static', filename='show_pdf/BSc_COMPUTERSCIENCE_syllabus.pdf'),
+            'outcomes_pdf': url_for('static', filename='show_pdf/BSc_COMPUTERSCIENCE_learningoutcomes.pdf')
         },
         'BSc_Mathematics': {
-            'syllabus_pdf': url_for('static', filename='BSc_MATHEMATICS_syllabus.pdf'),
-            'outcomes_pdf': url_for('static', filename='B.Sc_Mathematics_learningoutcomes.pdf')
+            'syllabus_pdf': url_for('static', filename='show_pdf/BSc_MATHEMATICS_syllabus.pdf'),
+            'outcomes_pdf': url_for('static', filename='show_pdf/BSc_MATHEMATICS_learningoutcomes.pdf')
         },
         'BA_English': {
-            'syllabus_pdf': url_for('static', filename='BA_ENGLISH_syllabus.pdf'),
-            'outcomes_pdf': url_for('static', filename='BA_ENGLISH_learningoutcomes.pdf')
+            'syllabus_pdf': url_for('static', filename='show_pdf/BA_ENGLISH_syllabus.pdf'),
+            'outcomes_pdf': url_for('static', filename='show_pdf/BA_ENGLISH_learningoutcomes.pdf')
         },
         'BA_Tamil': {
-            'syllabus_pdf': url_for('static', filename='BA_TAMIL_syllabus.pdf'),
-            'outcomes_pdf': url_for('static', filename='BA_TAMIL_learningoutcomes.pdf')
+            'syllabus_pdf': url_for('static', filename='show_pdf/BA_TAMIL_syllabus.pdf'),
+            'outcomes_pdf': url_for('static', filename='show_pdf/BA_TAMIL_learningoutcomes.pdf')
         },
         'BCom': {
-            'syllabus_pdf': url_for('static', filename='BCOM_syllabus.pdf'),
-            'outcomes_pdf': url_for('static', filename='BCOM_learningoutcomes.pdf')
+            'syllabus_pdf': url_for('static', filename='show_pdf/BCOM_syllabus.pdf'),
+            'outcomes_pdf': url_for('static', filename='show_pdf/BCOM_learningoutcomes.pdf')
         }
     }
 
@@ -99,7 +99,7 @@ def faculty_profile(slug):
             'department': 'Commerce',
             'qualification': 'Ph.D in Commerce',
             'cabin': 'Room 104',
-            'photo': url_for('static', filename='d_meena.png')  # corrected typo here
+            'photo': url_for('static', filename='d_meena.png')  # Typo was fixed earlier
         },
         'd_rajesh': {
             'name': 'Prof. D. Rajesh',
