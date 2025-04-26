@@ -24,7 +24,7 @@ def faculty():
     faculty_list = [
         {'name': 'Dr. A. Kumar', 'slug': 'a_kumar', 'department': 'Computer Science'},
         {'name': 'Prof. B. Lakshmi', 'slug': 'b_lakshmi', 'department': 'Mathematics'},
-        {'name': 'Dr. C. Ravi', 'slug': 'c_ravi', 'department': 'English'},
+        {'name': 'Dr. R.Gurumoorthy', 'slug': 'c_guru', 'department': 'English'},
         {'name': 'Dr. D. Meena', 'slug': 'd_meena', 'department': 'Tamil'},
     ]
     return render_template('faculty.html', faculty_list=faculty_list)
@@ -47,12 +47,12 @@ def faculty_profile(slug):
             'cabin': 'Room 102',
             'photo': 'faculty_photos/b_lakshmi.jpg'
         },
-        'c_ravi': {
-            'name': 'Dr. C. Ravi',
+        'c_guru': {
+            'name': 'Dr. R.Gurumoorthy',
             'department': 'English',
-            'qualification': 'Ph.D in English Literature',
+            'qualification': 'Ph.D in Computer Science,Mphil,MBA,MCA',
             'cabin': 'Room 103',
-            'photo': 'faculty_photos/c_ravi.jpg'
+            'photo': 'faculty_photos/c_guru.jpg'
         },
         'd_meena': {
             'name': 'Dr. D. Meena',
