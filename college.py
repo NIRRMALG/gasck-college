@@ -45,8 +45,32 @@ def select_year(course):
 
 # Step 3: Show syllabus topics for selected course and year
 @app.route('/syllabus/<course>/<year>')
-def syllabus_topics(course, year):
-    return f"<h1>{course.replace('_', ' ')} - {year.replace('_', ' ')}</h1><p>Here will be your syllabus topics!</p>"
+def show_syllabus(course, year):
+    syllabus = {
+        'BSc_Computer_Science': {
+            '1st_year': ['Programming in C', 'Digital Electronics', 'Mathematics I'],
+            '2nd_year': ['Data Structures', 'Operating Systems', 'Mathematics II'],
+            '3rd_year': ['DBMS', 'Web Technology', 'Project Work']
+        },
+        'BA_Tamil': {
+            '1st_year': ['Tamil Literature I', 'History of Tamil Language'],
+            '2nd_year': ['Tamil Literature II', 'Modern Tamil Poetry'],
+            '3rd_year': ['Tamil Novel', 'Tamil Journalism']
+        },
+        'BA_English': {
+            '1st_year': ['English Literature I', 'Introduction to Literary Forms'],
+            '2nd_year': ['English Literature II', 'Modern English Drama'],
+            '3rd_year': ['Shakespeare Studies', 'Contemporary Literature']
+        },
+        'BSc_Mathematics': {
+            '1st_year': ['Calculus', 'Algebra and Trigonometry'],
+            '2nd_year': ['Differential Equations', 'Vector Calculus'],
+            '3rd_year': ['Real Analysis', 'Complex Analysis']
+        }
+    }
+
+    subjects = syllabus.get(course, {}).get(year, [])
+    return render_template('show_syllabus.html', course=course.replace('_', ' '), year=year.replace('_', ' '), subjects=subjects)
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
