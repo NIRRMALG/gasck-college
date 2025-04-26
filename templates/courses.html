@@ -17,13 +17,13 @@
         </nav>
     </header>
 
-    <section>
-        <ul>
-            <li>BSc Computer Science</li>
-            <li>BA Tamil</li>
-            <li>BA English</li>
-            <li>BSc Mathematics</li>
-            <li>Bcom</li>
+    <section style="text-align: center; margin: 40px;">
+        <ul style="list-style: none; padding: 0;">
+            <li><a href="{{ url_for('course_pdfs', course='BSc_Computer_Science') }}">BSc Computer Science</a></li>
+            <li><a href="{{ url_for('course_pdfs', course='BA_Tamil') }}">BA Tamil</a></li>
+            <li><a href="{{ url_for('course_pdfs', course='BA_English') }}">BA English</a></li>
+            <li><a href="{{ url_for('course_pdfs', course='BSc_Mathematics') }}">BSc Mathematics</a></li>
+            <li><a href="{{ url_for('course_pdfs', course='Bcom') }}">BCom</a></li>
         </ul>
     </section>
 
@@ -32,4 +32,3 @@
     </footer>
 </body>
 </html>
-
