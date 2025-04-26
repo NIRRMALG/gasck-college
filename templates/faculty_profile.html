@@ -4,34 +4,61 @@
     <meta charset="UTF-8">
     <title>{{ faculty.name }} - Profile</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .faculty-card {
+            text-align: center;
+            padding: 20px;
+            max-width: 400px;
+            margin: 50px auto;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background-color: #f9f9f9;
+        }
+        .faculty-photo {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 3px solid #4CAF50;
+        }
+        .faculty-info h2 {
+            margin: 10px 0;
+            font-size: 24px;
+            color: #333;
+        }
+        .faculty-info p {
+            font-size: 18px;
+            color: #555;
+            margin: 5px 0;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>{{ faculty.name }}</h1>
-        <nav>
-            <a href="{{ url_for('home') }}">Home</a>
-            <a href="{{ url_for('about') }}">About</a>
-            <a href="{{ url_for('faculty') }}">Faculty</a>
-            <a href="{{ url_for('academics') }}">Academics</a>
-            <a href="{{ url_for('contact') }}">Contact</a>
-        </nav>
-    </header>
 
-    <section style="text-align: center; margin-top: 30px;">
-        <img 
-            src="{{ url_for('static', filename=faculty.photo) }}" 
-            alt="{{ faculty.name }}" 
-            style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%; margin-bottom: 20px;"
-            onerror="this.onerror=null; this.src='{{ url_for('static', filename='default_profile.png') }}';"
-        >
-        <h2>{{ faculty.department }}</h2>
-        <p><strong>Qualification:</strong> {{ faculty.qualification }}</p>
-        <p><strong>Cabin Number:</strong> {{ faculty.cabin }}</p>
-    </section>
+<header>
+    <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('courses') }}">Courses</a>
+        <a href="{{ url_for('academics') }}">Academics</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+    </nav>
+</header>
 
-    <footer>
-        <p>&copy; GASCK – Where Minds Soar, Futures Evolve.</p>
-    </footer>
+<section class="faculty-card">
+    <img src="{{ url_for('static', filename='faculty_photos/' + faculty.photo) }}" alt="{{ faculty.name }}" class="faculty-photo">
+    <div class="faculty-info">
+        <h2>{{ faculty.name }}</h2>
+        <p><strong>Department:</strong> {{ faculty.department }}</p>
+        <p><strong>Cabin No:</strong> {{ faculty.cabin }}</p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; GASCK – Where Minds Soar, Futures Evolve.</p>
+</footer>
+
 </body>
 </html>
-
