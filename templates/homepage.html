@@ -2,43 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My College Website</title>
+    <title>GASCK - Home</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <header>
-        <h1>Welcome to Government Arts And Science College, Kuthalam (GASCK)</h1>
+        <h1>Government Arts And Science College, Kuthalam (GASCK)</h1>
         <nav>
-            <a href="#about">About</a>
-            <a href="#courses">Courses</a>
-            <a href="#contact">Contact</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('courses') }}">Courses</a>
+            <a href="{{ url_for('faculty') }}">Faculty</a>
+            <a href="{{ url_for('academics') }}">Academics</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
         </nav>
     </header>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p>We are an innovative institution dedicated to education and growth.</p>
-        <p>We are known as GASCK because:</p>
-        <p>We help you to Grow.</p>
-        <p>We help you to Aspire.</p>
-        <p>We help you to Succeed.</p>
-        <p>We help you to Conquer.</p>
-        <p>We help you to Know.</p>
-    </section>
-
-    <section id="courses">
-        <h2>Courses Offered</h2>
-        <ul>
-            <li>BSc Computer Science</li>
-            <li>BA Tamil</li>
-            <li>BA English</li>
-            <li>BSc Mathematics</li>
-        </ul>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: gasck2022@gmail.com</p>
+    <section>
+        <img src="{{ url_for('static', filename='college_front.jpg') }}" alt="College Front" style="width:100%; max-height:500px; object-fit:cover;">
     </section>
 
     <footer>
@@ -46,4 +26,3 @@
     </footer>
 </body>
 </html>
-
