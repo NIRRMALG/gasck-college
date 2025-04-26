@@ -7,22 +7,32 @@
 </head>
 <body>
     <header>
-        <h1>Government Arts And Science College, Kuthalam (GASCK)</h1>
+        <h1>Government Arts and Science College, Kuthalam (GASCK)</h1>
         <nav>
-            <a href="{{ url_for('about') }}">About</a>
-            <a href="{{ url_for('courses') }}">Courses</a>
-            <a href="{{ url_for('faculty') }}">Faculty</a>
-            <a href="{{ url_for('academics') }}">Academics</a>
-            <a href="{{ url_for('contact') }}">Contact</a>
+            <ul style="list-style: none; display: flex; gap: 20px; justify-content: center; padding: 0;">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('courses') }}">Courses</a></li>
+                <li><a href="{{ url_for('faculty') }}">Faculty</a></li>
+                <li><a href="{{ url_for('academics') }}">Academics</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
-    <section>
-        <img src="{{ url_for('static', filename='college_front.png') }}" alt="College Front" style="width:100%; max-height:500px; object-fit:cover;">
-    </section>
+    <main>
+        <section>
+            <img src="{{ url_for('static', filename='college_front.png') }}" alt="College Front" style="width:100%; max-height:500px; object-fit:cover;">
+        </section>
 
-    <footer>
-        <p>&copy; GASCK – Where Minds Soar, Futures Evolve.</p>
+        <section style="text-align: center; margin: 30px 0;">
+            <h2>Welcome to GASCK</h2>
+            <p>Empowering students to soar high and shape a bright future.</p>
+        </section>
+    </main>
+
+    <footer style="text-align: center; padding: 10px; background-color: #f0f0f0;">
+        <p>&copy; 2025 GASCK – Where Minds Soar, Futures Evolve.</p>
     </footer>
 </body>
 </html>
