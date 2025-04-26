@@ -23,16 +23,6 @@
             margin-bottom: 15px;
             border: 3px solid #4CAF50;
         }
-        .faculty-info h2 {
-            margin: 10px 0;
-            font-size: 24px;
-            color: #333;
-        }
-        .faculty-info p {
-            font-size: 18px;
-            color: #555;
-            margin: 5px 0;
-        }
     </style>
 </head>
 <body>
@@ -48,10 +38,11 @@
 </header>
 
 <section class="faculty-card">
-    <img src="{{ url_for('static', filename='faculty_photos/' + faculty.photo) }}" alt="{{ faculty.name }}" class="faculty-photo">
+    <img src="{{ faculty.photo }}" alt="{{ faculty.name }}" class="faculty-photo">
     <div class="faculty-info">
         <h2>{{ faculty.name }}</h2>
         <p><strong>Department:</strong> {{ faculty.department }}</p>
+        <p><strong>Qualification:</strong> {{ faculty.qualification }}</p>
         <p><strong>Cabin No:</strong> {{ faculty.cabin }}</p>
     </div>
 </section>
