@@ -1,22 +1,33 @@
-<section class="faculty-list">
-    <a href="{{ url_for('faculty_profile', faculty_name='A_Kumar') }}" class="faculty-card">
-        <h2>Dr. A. Kumar</h2>
-        <p>Professor of Computer Science</p>
-    </a>
-    <a href="{{ url_for('faculty_profile', faculty_name='B_Lakshmi') }}" class="faculty-card">
-        <h2>Dr. B. Lakshmi</h2>
-        <p>Head of Tamil Department</p>
-    </a>
-    <a href="{{ url_for('faculty_profile', faculty_name='C_David') }}" class="faculty-card">
-        <h2>Prof. C. David</h2>
-        <p>Senior Lecturer, English</p>
-    </a>
-    <a href="{{ url_for('faculty_profile', faculty_name='D_Priya') }}" class="faculty-card">
-        <h2>Dr. D. Priya</h2>
-        <p>Professor of Mathematics</p>
-    </a>
-    <a href="{{ url_for('faculty_profile', faculty_name='E_Varun') }}" class="faculty-card">
-        <h2>Dr. E. Varun</h2>
-        <p>Head of Commerce Department</p>
-    </a>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Faculty</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>Meet Our Faculty</h1>
+    </header>
+
+    <section class="faculty-list">
+        {% for faculty in faculty_list %}
+        <a href="{{ url_for('faculty_profile', slug=faculty.slug) }}" class="faculty-card">
+            <div class="faculty-photo">
+                <img src="{{ url_for('static', filename=faculty.slug + '.png') }}" alt="{{ faculty.name }}">
+            </div>
+            <div class="faculty-info">
+                <h2>{{ faculty.name }}</h2>
+                <p>{{ faculty.department }}</p>
+            </div>
+        </a>
+        {% endfor %}
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Your College Name</p>
+    </footer>
+
+</body>
+</html>
