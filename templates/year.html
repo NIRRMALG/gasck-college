@@ -1,1 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Year - GASCK</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Select Year for {{ course.replace('_', ' ') }}</h1>
+    </header>
+
+    <section>
+        <h2>Choose Year:</h2>
+        <ul>
+            <li><a href="/syllabus/{{ course }}/1st_year">1st Year</a></li>
+            <li><a href="/syllabus/{{ course }}/2nd_year">2nd Year</a></li>
+            <li><a href="/syllabus/{{ course }}/3rd_year">3rd Year</a></li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 GASCK. All rights reserved.</p>
+    </footer>
+</body>
+</html>
 
