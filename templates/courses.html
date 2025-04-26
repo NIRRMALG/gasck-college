@@ -27,29 +27,29 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>Courses Offered</h1>
-        <nav>
-            <a href="{{ url_for('home') }}">Home</a>
-            <a href="{{ url_for('about') }}">About</a>
-            <a href="{{ url_for('faculty') }}">Faculty</a>
-            <a href="{{ url_for('academics') }}">Academics</a>
-            <a href="{{ url_for('contact') }}">Contact</a>
-        </nav>
-    </header>
+<header>
+    <h1>Courses Offered</h1>
+    <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('faculty') }}">Faculty</a>
+        <a href="{{ url_for('academics') }}">Academics</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+    </nav>
+</header>
 
-    <section>
-        <ul class="course-list">
-            <li><a class="course-link" href="{{ url_for('select_course', course='BSc_Computer_Science') }}">BSc Computer Science</a></li>
-            <li><a class="course-link" href="{{ url_for('select_course', course='BA_Tamil') }}">BA Tamil</a></li>
-            <li><a class="course-link" href="{{ url_for('select_course', course='BA_English') }}">BA English</a></li>
-            <li><a class="course-link" href="{{ url_for('select_course', course='BSc_Mathematics') }}">BSc Mathematics</a></li>
-            <li><a class="course-link" href="{{ url_for('select_course', course='BCom') }}">BCom</a></li>
-        </ul>
-    </section>
+<section>
+    <ul class="course-list">
+        <li><a class="course-link" href="{{ url_for('show_course_pdfs', course='BSc_Computer_Science') }}" target="_blank">BSc Computer Science</a></li>
+        <li><a class="course-link" href="{{ url_for('show_course_pdfs', course='BA_Tamil') }}" target="_blank">BA Tamil</a></li>
+        <li><a class="course-link" href="{{ url_for('show_course_pdfs', course='BA_English') }}" target="_blank">BA English</a></li>
+        <li><a class="course-link" href="{{ url_for('show_course_pdfs', course='BSc_Mathematics') }}" target="_blank">BSc Mathematics</a></li>
+        <li><a class="course-link" href="{{ url_for('show_course_pdfs', course='Bcom') }}" target="_blank">BCom</a></li>
+    </ul>
+</section>
 
-    <footer>
-        <p>&copy; GASCK – Where Minds Soar, Futures Evolve.</p>
-    </footer>
+<footer>
+    <p>&copy; GASCK – Where Minds Soar, Futures Evolve.</p>
+</footer>
 </body>
 </html>
