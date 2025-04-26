@@ -4,6 +4,27 @@
     <meta charset="UTF-8">
     <title>Courses at GASCK</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .course-list {
+            list-style: none;
+            padding: 0;
+        }
+        .course-list li {
+            margin: 10px 0;
+        }
+        .course-link {
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        .course-link:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -17,13 +38,13 @@
         </nav>
     </header>
 
-    <section style="text-align: center; margin: 40px;">
-        <ul style="list-style: none; padding: 0;">
-            <li><a href="{{ url_for('course_pdfs', course='BSc_Computer_Science') }}">BSc Computer Science</a></li>
-            <li><a href="{{ url_for('course_pdfs', course='BA_Tamil') }}">BA Tamil</a></li>
-            <li><a href="{{ url_for('course_pdfs', course='BA_English') }}">BA English</a></li>
-            <li><a href="{{ url_for('course_pdfs', course='BSc_Mathematics') }}">BSc Mathematics</a></li>
-            <li><a href="{{ url_for('course_pdfs', course='Bcom') }}">BCom</a></li>
+    <section>
+        <ul class="course-list">
+            <li><a class="course-link" href="{{ url_for('select_course', course='BSc_Computer_Science') }}">BSc Computer Science</a></li>
+            <li><a class="course-link" href="{{ url_for('select_course', course='BA_Tamil') }}">BA Tamil</a></li>
+            <li><a class="course-link" href="{{ url_for('select_course', course='BA_English') }}">BA English</a></li>
+            <li><a class="course-link" href="{{ url_for('select_course', course='BSc_Mathematics') }}">BSc Mathematics</a></li>
+            <li><a class="course-link" href="{{ url_for('select_course', course='BCom') }}">BCom</a></li>
         </ul>
     </section>
 
