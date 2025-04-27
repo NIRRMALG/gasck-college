@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scholarships</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .pdf-links {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .pdf-links a {
+            display: inline-block;
+            margin: 15px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .pdf-links a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Scholarships</h1>
+    <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('academics') }}">Back to Academics</a>
+    </nav>
+</header>
+
+<section class="pdf-links">
+    <a href="{{ url_for('static', filename='NannMudhalvan.pdf') }}" target="_blank">Naan Mudhalvan Scholarship</a>
+    <a href="{{ url_for('static', filename='Pudumai_Penn.pdf') }}" target="_blank">Pudumai Penn Scholarship</a>
+</section>
+
+<footer>
+    <p>&copy; GASCK – Where Minds Soar, Futures Evolve.</p>
+</footer>
+
+</body>
+</html>
