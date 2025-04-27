@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Location - GASCK</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    
+    <section style="text-align: center; margin-top: 100px;">
+        <h1>Our Location</h1>
+        <p>Government Arts and Science College, Kuthalam</p>
+        <div style="display: flex; justify-content: center; margin-top: 30px;">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.4541086992195!2d79.6031276758512!3d11.00651055413326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a552694c251b8a5%3A0x324232b1b508539e!2sGovernment%20Arts%20and%20Science%20College%2C%20Kuthalam!5e0!3m2!1sen!2sin!4v1714191577526!5m2!1sen!2sin" 
+                width="600" 
+                height="450" 
+                style="border:0; border-radius: 10px;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; GASCK – Where Minds Soar, Futures Evolve.</p>
+    </footer>
+</body>
+</html>
