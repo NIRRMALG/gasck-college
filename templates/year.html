@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-{% include 'navbar.html' %}
 <head>
     <meta charset="UTF-8">
     <title>Select Year - GASCK</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
+    {% include 'navbar.html' %}
     <header>
         <h1>Select Year for {{ course.replace('_', ' ') }}</h1>
     </header>
