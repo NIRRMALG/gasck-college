@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-{% include 'navbar.html' %}
 <head>
     <meta charset="UTF-8">
     <title>{{ faculty.name }} - Profile</title>
@@ -27,15 +26,8 @@
     </style>
 </head>
 <body>
-
+{% include 'navbar.html' %}
 <header>
-    <nav>
-        <a href="{{ url_for('home') }}">Home</a>
-        <a href="{{ url_for('about') }}">About</a>
-        <a href="{{ url_for('courses') }}">Courses</a>
-        <a href="{{ url_for('academics') }}">Academics</a>
-        <a href="{{ url_for('contact') }}">Contact</a>
-    </nav>
 </header>
 
 <section class="faculty-card">
