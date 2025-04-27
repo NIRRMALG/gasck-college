@@ -1,15 +1,14 @@
-<nav class="navbar">
-    <ul>
-        <li><a href="{{ url_for('home') }}">Home</a></li>
-        <li><a href="{{ url_for('about') }}">About</a></li>
-        <li><a href="{{ url_for('academics') }}">Academics</a></li>
-        <li><a href="{{ url_for('courses') }}">Courses</a></li>
-        <li><a href="{{ url_for('faculty') }}">Faculty</a></li>
-        <li><a href="{{ url_for('contact') }}">Contact</a></li>
-    </ul>
-</nav>
-
-<div class="logo-container">
-    <img src="{{ url_for('static', filename='gasck_logo.png') }}" alt="GASCK Logo" class="gasck-logo">
+<div class="header">
+    <div class="logo-container">
+        <img src="{{ url_for('static', filename='images/gasck_logo.png') }}" alt="GASCK Logo">
+    </div>
+    <h1 class="college-name">Government Arts and Science College, Kuthalam (GASCK)</h1>
+    <nav class="navigation">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('academics') }}">Academics</a>
+        <a href="{{ url_for('courses') }}">Courses</a>
+        <a href="{{ url_for('faculty') }}">Faculty</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+    </nav>
 </div>
-
