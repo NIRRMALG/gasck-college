@@ -1,24 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-{% include 'navbar.html' %}
 <head>
     <meta charset="UTF-8">
     <title>GASCK - Home</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
+{% include 'navbar.html' %}
     <header>
         <h1>Government Arts and Science College, Kuthalam (GASCK)</h1>
-        <nav>
-            <ul style="list-style: none; display: flex; gap: 20px; justify-content: center; padding: 0;">
-                <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="{{ url_for('about') }}">About</a></li>
-                <li><a href="{{ url_for('courses') }}">Courses</a></li>
-                <li><a href="{{ url_for('faculty') }}">Faculty</a></li>
-                <li><a href="{{ url_for('academics') }}">Academics</a></li>
-                <li><a href="{{ url_for('contact') }}">Contact</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
