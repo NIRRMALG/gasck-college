@@ -7,35 +7,41 @@ body {
 }
 
 .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #002147;
+    padding: 15px;
     position: relative;
-    background-color: #002147; /* Dark blue */
-    padding: 20px;
     text-align: center;
 }
 
 .logo-container {
     position: absolute;
-    top: 20px;
-    left: 30px; /* Logo on the LEFT now */
+    top: 10px;
+    left: 15px;
 }
 
 .logo-container img {
-    width: 150px;
+    width: 140px;
     height: auto;
 }
 
 .college-name {
     color: white;
-    font-size: 28px;
+    font-size: 26px;
     font-weight: bold;
+    padding: 10px 20px;
 }
 
 .navigation-bar {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     background-color: #003366;
     padding: 12px 0;
-    gap: 30px;
+    gap: 20px;
 }
 
 .navigation-bar a {
@@ -62,4 +68,21 @@ footer {
     color: white;
     text-align: center;
     padding: 15px;
+}
+
+/* RESPONSIVE FIX for small devices */
+@media (max-width: 768px) {
+    .logo-container img {
+        width: 100px;
+    }
+    .college-name {
+        font-size: 20px;
+        margin-top: 20px;
+        text-align: center;
+        width: 100%;
+    }
+    .navigation-bar {
+        gap: 15px;
+        padding: 10px 0;
+    }
 }
