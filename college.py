@@ -130,6 +130,9 @@ def academics():
 @app.route('/scholarships')
 def scholarships():
     return render_template('scholarships.html')
+@app.route('/location')
+def location():
+    return render_template('location.html')
 
 # Run the App
 if __name__ == '__main__':
