@@ -1,10 +1,15 @@
-<nav style="background-color: #1e3a5f; padding: 10px 0;">
-    <div style="display: flex; justify-content: center; align-items: center; gap: 30px;">
-        <a href="{{ url_for('home') }}" style="color: white; text-decoration: none; font-weight: bold;">Home</a>
-        <a href="{{ url_for('about') }}" style="color: white; text-decoration: none; font-weight: bold;">About</a>
-        <a href="{{ url_for('academics') }}" style="color: white; text-decoration: none; font-weight: bold;">Academics</a>
-        <a href="{{ url_for('courses') }}" style="color: white; text-decoration: none; font-weight: bold;">Courses</a>
-        <a href="{{ url_for('faculty') }}" style="color: white; text-decoration: none; font-weight: bold;">Faculty</a>
-        <a href="{{ url_for('contact') }}" style="color: white; text-decoration: none; font-weight: bold;">Contact</a>
-    </div>
+<nav class="navbar">
+    <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('academics') }}">Academics</a></li>
+        <li><a href="{{ url_for('courses') }}">Courses</a></li>
+        <li><a href="{{ url_for('faculty') }}">Faculty</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+    </ul>
 </nav>
+
+<div class="logo-container">
+    <img src="{{ url_for('static', filename='gasck_logo.png') }}" alt="GASCK Logo" class="gasck-logo">
+</div>
+
