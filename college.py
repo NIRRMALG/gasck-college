@@ -13,7 +13,7 @@ def home():
 def about():
     return render_template('about.html')
 
-# Courses Page: Show All Courses
+# Courses Page
 @app.route('/courses')
 def courses():
     courses = [
@@ -25,7 +25,7 @@ def courses():
     ]
     return render_template('courses.html', courses=courses)
 
-# Course PDFs Page (syllabus and learning outcomes)
+# Course PDFs Page
 @app.route('/courses/<course>')
 def course_pdfs(course):
     pdf_links = {
@@ -57,7 +57,7 @@ def course_pdfs(course):
 
     return render_template('course_pdfs.html', course=course.replace('_', ' '), course_info=course_info)
 
-# Faculty List Page: Show All Faculty Names
+# Faculty List Page
 @app.route('/faculty')
 def faculty():
     faculty_list = [
@@ -69,7 +69,7 @@ def faculty():
     ]
     return render_template('faculty.html', faculty_list=faculty_list)
 
-# Faculty Details Page
+# Faculty Profile Page
 @app.route('/faculty/<slug>')
 def faculty_profile(slug):
     faculty_data = {
@@ -99,7 +99,7 @@ def faculty_profile(slug):
             'department': 'Commerce',
             'qualification': 'Ph.D in Commerce',
             'cabin': 'Room 104',
-            'photo': url_for('static', filename='d_meena.png')  # Typo was fixed earlier
+            'photo': url_for('static', filename='d_meena.png')
         },
         'd_rajesh': {
             'name': 'Prof. D. Rajesh',
@@ -121,10 +121,15 @@ def faculty_profile(slug):
 def contact():
     return render_template('contact.html')
 
-# Academics Page
+# Academics Main Page
 @app.route('/academics')
 def academics():
     return render_template('academics.html')
+
+# Scholarships Page (new)
+@app.route('/scholarships')
+def scholarships():
+    return render_template('scholarships.html')
 
 # Run the App
 if __name__ == '__main__':
