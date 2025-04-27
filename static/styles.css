@@ -12,6 +12,23 @@ header {
     padding: 20px;
     text-align: center;
 }
+.logo-container {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 999;
+}
+
+.gasck-logo {
+    height: 70px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.gasck-logo:hover {
+    transform: scale(1.1) rotate(5deg);
+    opacity: 0.9;
+}
+
 
 nav a {
     color: white;
