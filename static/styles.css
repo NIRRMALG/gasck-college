@@ -14,13 +14,13 @@ header {
 }
 .logo-container {
     position: fixed;
-    top: 15px;
-    right: 20px;
+    top: 30px;
+    right: 50px;
     z-index: 999;
 }
 
 .gasck-logo {
-    height: 70px;
+    height: 100px;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
