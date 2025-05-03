@@ -21,7 +21,7 @@ def courses():
         'BSc_Mathematics',
         'BA_English',
         'BA_Tamil',
-        'BCom'
+        'Bcom'
     ]
     return render_template('courses.html', courses=courses)
 
