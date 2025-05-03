@@ -30,24 +30,24 @@ def courses():
 def course_pdfs(course):
     pdf_links = {
         'BSc_Computer_Science': {
-            'syllabus_pdf': url_for('static', filename='BSc_COMPUTERSCIENCE_syllabus.pdf'),
-            'outcomes_pdf': url_for('static', filename='BSc_COMPUTERSCIENCE_learningoutcomes.pdf')
+            'syllabus_pdf': url_for('static', filename='Bsc Computer science.pdf'),
+            'outcomes_pdf': url_for('static', filename='Cse learning.pdf')
         },
         'BSc_Mathematics': {
-            'syllabus_pdf': url_for('static', filename='BSc_MATHEMATICS_syllabus.pdf'),
-            'outcomes_pdf': url_for('static', filename='BSc_MATHEMATICS_learningoutcomes.pdf')
+            'syllabus_pdf': url_for('static', filename='Bsc mathematics.pdf'),
+            'outcomes_pdf': url_for('static', filename='Mathematics learning.pdf')
         },
         'BA_English': {
-            'syllabus_pdf': url_for('static', filename='BA_ENGLISH_syllabus.pdf'),
-            'outcomes_pdf': url_for('static', filename='BA_ENGLISH_learningoutcomes.pdf')
+            'syllabus_pdf': url_for('static', filename='English.pdf'),
+            'outcomes_pdf': url_for('static', filename='English learning.pdf')
         },
         'BA_Tamil': {
-            'syllabus_pdf': url_for('static', filename='BA_TAMIL_syllabus.pdf'),
-            'outcomes_pdf': url_for('static', filename='BA_TAMIL_learningoutcomes.pdf')
+            'syllabus_pdf': url_for('static', filename='Tamil.pdf'),
+            'outcomes_pdf': url_for('static', filename='Tamil learning.pdf')
         },
         'BCom': {
-            'syllabus_pdf': url_for('static', filename='BCOM_syllabus.pdf'),
-            'outcomes_pdf': url_for('static', filename='BCOM_learningoutcomes.pdf')
+            'syllabus_pdf': url_for('static', filename='Bcom.pdf'),
+            'outcomes_pdf': url_for('static', filename='Bcom learning.pdf')
         }
     }
 
