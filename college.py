@@ -45,7 +45,7 @@ def course_pdfs(course):
             'syllabus_pdf': url_for('static', filename='Tamil.pdf'),
             'outcomes_pdf': url_for('static', filename='Tamil Learning.pdf')
         },
-        'BCom': {
+        'Bcom': {
             'syllabus_pdf': url_for('static', filename='Bcom.pdf'),
             'outcomes_pdf': url_for('static', filename='Bcom learning.pdf')
         }
