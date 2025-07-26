@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 perplexity_api_key = os.getenv("PERPLEXITY_API_KEY")
-print(" API Key Loaded:", perplexity_api_key)
+
 
 app = Flask(__name__)
 CORS(app)
