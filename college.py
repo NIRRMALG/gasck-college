@@ -1,19 +1,25 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request, jsonify
+from flask_cors import CORS
 import os
+import openai
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 app = Flask(__name__)
+CORS(app)
 
-# Homepage
+# ---------- College Website Routes (unchanged) ----------
 @app.route('/')
 def home():
     return render_template('homepage.html')
 
-# About Page
 @app.route('/about')
 def about():
     return render_template('about.html')
 
-# Courses Page
 @app.route('/courses')
 def courses():
     courses = [
@@ -25,7 +31,6 @@ def courses():
     ]
     return render_template('courses.html', courses=courses)
 
-# Course PDFs Page
 @app.route('/courses/<course>')
 def course_pdfs(course):
     pdf_links = {
@@ -57,7 +62,6 @@ def course_pdfs(course):
 
     return render_template('course_pdfs.html', course=course.replace('_', ' '), course_info=course_info)
 
-# Faculty List Page
 @app.route('/faculty')
 def faculty():
     faculty_list = [
@@ -69,7 +73,6 @@ def faculty():
     ]
     return render_template('faculty.html', faculty_list=faculty_list)
 
-# Faculty Profile Page
 @app.route('/faculty/<slug>')
 def faculty_profile(slug):
     faculty_data = {
@@ -116,25 +119,42 @@ def faculty_profile(slug):
 
     return render_template('faculty_profile.html', faculty=faculty)
 
-# Contact Page
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
 
-# Academics Main Page
 @app.route('/academics')
 def academics():
     return render_template('academics.html')
 
-# Scholarships Page (new)
 @app.route('/scholarships')
 def scholarships():
     return render_template('scholarships.html')
+
 @app.route('/location')
 def location():
     return render_template('location.html')
 
-# Run the App
+
+# ---------------- ✅ Chatbot Route Using OpenAI ----------------
+@app.route("/chat", methods=["POST"])
+def chat():
+    user_message = request.json.get("message")
+    try:
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",  # or "gpt-4" if you have access
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant for a college website called GASCK. You provide information about the college and can answer general questions too."},
+                {"role": "user", "content": user_message}
+            ]
+        )
+        reply = response['choices'][0]['message']['content']
+        return jsonify({"reply": reply})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+# ---------------- Run the App ----------------
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
+    app.run(host='0.0.0.0', port=port, debug=True)
