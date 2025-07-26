@@ -1,12 +1,13 @@
 from flask import Flask, render_template, url_for, request, jsonify
 from flask_cors import CORS
 import os
-import openai
+import requests
 from dotenv import load_dotenv
 
 # Load environment variables
 load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
+perplexity_api_key = os.getenv("PERPLEXITY_API_KEY")
+print(" API Key Loaded:", perplexity_api_key)
 
 app = Flask(__name__)
 CORS(app)
@@ -140,22 +141,56 @@ def chatbot():
     return render_template('chatbot.html')
 
 
-# ---------------- ✅ Chatbot Route Using OpenAI ----------------
 @app.route("/chat", methods=["POST"])
 def chat():
     user_message = request.json.get("message")
+    print(" User message:", user_message)
+
+    perplexity_api_key = os.getenv("PERPLEXITY_API_KEY")
+    if not perplexity_api_key:
+        return jsonify({"error": "Perplexity API key not configured."}), 500
+
+    headers = {
+        "Authorization": f"Bearer {perplexity_api_key}",
+        "Content-Type": "application/json"
+    }
+
+    payload = {
+        "model": "sonar-pro",  # or the correct model string
+        "messages": [
+            {
+  "role": "system",
+  "content": "You are a helpful and friendly chatbot for the GASCK college website. Please answer questions briefly and conversationally, without citations or overly detailed explanations."
+}
+,
+            {"role": "user", "content": user_message}
+        ],
+        "max_tokens": 500,
+        "temperature": 0.3
+    }
+
     try:
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",  # or "gpt-4" if you have access
-            messages=[
-                {"role": "system", "content": "You are a helpful assistant for a college website called GASCK. You provide information about the college and can answer general questions too."},
-                {"role": "user", "content": user_message}
-            ]
+        response = requests.post(
+            "https://api.perplexity.ai/chat/completions",
+            json=payload,
+            headers=headers
         )
-        reply = response['choices'][0]['message']['content']
+        response.raise_for_status()
+        data = response.json()
+        reply = data['choices'][0]['message']['content']
         return jsonify({"reply": reply})
+
+    except requests.exceptions.HTTPError as err:
+        print("Perplexity API HTTP Error:", err)
+        print("Response content:", response.text) 
+        return jsonify({"error": f"HTTP Error: {err}, Details: {response.text}"}), 500
+
     except Exception as e:
+        print("Perplexity API Error:", e)
         return jsonify({"error": str(e)}), 500
+
+
+
 
 
 # ---------------- Run the App ----------------

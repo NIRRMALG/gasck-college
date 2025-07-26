@@ -21,6 +21,25 @@ body {
   padding: 10px;
   margin-bottom: 10px;
 }
+.copy-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #007bff;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+.copy-btn:hover {
+  opacity: 1;
+}
+
 
 .message {
   margin-bottom: 10px;
