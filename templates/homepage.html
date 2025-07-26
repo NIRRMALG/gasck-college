@@ -7,26 +7,41 @@
 </head>
 <body>
 {% include 'navbar.html' %}
+
     <header>
         <h1></h1>
     </header>
 
     <main>
+        <!-- ✅ College Image Banner -->
         <section>
-            <img src="{{ url_for('static', filename='college_front.png') }}" alt="College Front" style="width:100%; max-height:500px; object-fit:cover;">
+            <img src="{{ url_for('static', filename='college_front.png') }}" alt="College Front"
+                 style="width:100%; max-height:500px; object-fit:cover;">
         </section>
 
+        <!-- ✅ Welcome Message -->
         <section style="text-align: center; margin: 30px 0;">
             <h2>Welcome to GASCK</h2>
             <p>Empowering students to soar high and shape a bright future.</p>
-            <p>At GASCK, we inspire students to <strong>Grow</strong>, <strong>Aspire</strong>, <strong>Succeed</strong>, 
-            <strong>Conquer</strong>, and <strong>Know</strong>. Our mission is to empower learners with knowledge, skills, 
-            and values for a brighter future. Join us and become a part of a thriving academic community that shapes tomorrow’s minds! </p>
+            <p>
+                At GASCK, we inspire students to <strong>Grow</strong>, <strong>Aspire</strong>, <strong>Succeed</strong>,
+                <strong>Conquer</strong>, and <strong>Know</strong>. Our mission is to empower learners with knowledge,
+                skills, and values for a brighter future. Join us and become a part of a thriving academic community that
+                shapes tomorrow’s minds!
+            </p>
+
+            <!-- ✅ Chatbot Button -->
+            <div style="margin-top: 30px;">
+                <p>Need quick help or information?</p>
+                <a href="{{ url_for('chatbot') }}" class="chatbot-btn">💬 Chat with GASCK AI</a>
+            </div>
         </section>
     </main>
 
-    <footer style="text-align: center; padding: 10px; background-color: black;">
+    <!-- ✅ Footer -->
+    <footer style="text-align: center; padding: 10px; background-color: black; color: white;">
         <p>&copy; 2025 GASCK – Where Minds Soar, Futures Evolve.</p>
     </footer>
+
 </body>
 </html>
