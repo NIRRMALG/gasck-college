@@ -69,6 +69,19 @@ footer {
     text-align: center;
     padding: 15px;
 }
+.chatbot-btn {
+    display: inline-block;
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+.chatbot-btn:hover {
+    background-color: #0056b3;
+}
 
 /* RESPONSIVE FIX for small devices */
 @media (max-width: 768px) {
