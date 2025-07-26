@@ -135,6 +135,10 @@ def scholarships():
 def location():
     return render_template('location.html')
 
+@app.route('/chatbot')
+def chatbot():
+    return render_template('chatbot.html')
+
 
 # ---------------- ✅ Chatbot Route Using OpenAI ----------------
 @app.route("/chat", methods=["POST"])
