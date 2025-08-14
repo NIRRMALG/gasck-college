@@ -4,7 +4,7 @@ This is the official website built for my father's college — **Government Arts
 
 ## 🌐 Live Site
 
-🔗 [gasckclg.onrender.com](https://gasckclg.onrender.com)
+🔗 [gasckclg.onrender.com](https://gasckcollege.onrender.com)
 
 ## 🛠️ Tech Stack
 
